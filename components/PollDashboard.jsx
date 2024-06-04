@@ -5,8 +5,9 @@ import PollList from './PollList';
 import PollForm from './PollForm';
 import PollDetail from './PollDetail';
 
-const supabaseUrl = '(link unavailable)';
+const supabaseUrl = 'https://bhxngkcycdiluwybrhnd.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJoeG5na2N5Y2RpbHV3eWJyaG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTcxMjM4OTQsImV4cCI6MjAzMjY5OTg5NH0.s3CoU5zOuYw7tkaQN3BKRUXiAA0QynIUup1ehi5DXCY';
+
 const supabase = createClient(supabaseUrl, supabaseKey, { schema: 'public' });
 
 const PollDashboard = () => {

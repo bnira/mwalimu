@@ -1,7 +1,7 @@
-import PollDashboard from "../components/PollDashboard";
+import VotingForm from "../components/VotingForm";
 
 export default function Home() {
   return (
-    <div><PollDashboard /></div>
+    <div><VotingForm /></div>
   )
 }

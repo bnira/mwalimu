@@ -7,6 +7,7 @@ import { superbase } from "@/lib/supabaseClient";
  * @param {Object} res - The response object.
  * @returns {Promise<void>} - A promise that resolves when the response is sent.
  */
+
 export default async function handler(req,res) {
     const {employeeId} = req.body;
 

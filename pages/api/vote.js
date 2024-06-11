@@ -1,4 +1,4 @@
-import { superbase } from "@/lib/supabaseClient";
+import { superbase } from "../../lib/supabaseClient";
 
 /**
  * Handles the voting process for the API endpoint.

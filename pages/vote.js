@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import toast, { Toaster } from 'react-hot-toast'
-import '@/app/globals.css'
+import '../app/globals.css'
 
 const Vote = () => {
   const [presidentCandidates, setPresidentCandidates] = useState([])
@@ -11,7 +11,7 @@ const Vote = () => {
   const [selectedDeputy, setSelectedDeputy] = useState(null)
   const router = useRouter()
   const { employeeId } = router.query
-
+  
   useEffect(() => {
     const fetchCandidates = async () => {
       const resPresident = await fetch('/api/getCandidates?position=president')

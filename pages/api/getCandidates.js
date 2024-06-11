@@ -1,4 +1,4 @@
-import { superbase } from "@/lib/supabaseClient";
+import { superbase } from "../../lib/supabaseClient";
 
 /**
  * Retrieves candidates from the database based on the specified position.
@@ -13,11 +13,12 @@ export default async function handler(req, res) {
     const {data,error} = await superbase
     .from('candidates')
     .select('*')
-    .eq('position', position)
+    .eq('position', position);
 
     if(error) {
         res.status(500).json({message: 'Error fetching candidates'});
     } else {
+        console.log(data);
         res.status(200).json(data);
     }
 }

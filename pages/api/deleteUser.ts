@@ -8,15 +8,17 @@ export default async function handler(req,res) {
         res.status(400).json({message: 'Employee ID is required'});
     }
     console.log(employee_id);
-    const {data, error} = await superbase
+    const {error} = await superbase
     .from('voters')
     .delete()
     .eq('employee_id', employee_id)
     .single()
 
-    if (error || !data) {
-        res.status(404).json({messsage: 'Employee not found'});
-    } else {
+    if (!error) {
+        console.log('Employee deleted successfully');
         res.status(200).json({message: 'Employee deleted successfully'});
+    } else {
+        console.log('Error: ', error);
+        res.status(500).json({message: 'An error occurred while deleting employee'});
     }
 }

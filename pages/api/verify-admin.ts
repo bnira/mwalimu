@@ -8,17 +8,20 @@ export default async function handler(
 ) {
  if (req.method === 'POST') {
   const { pwd } = req.body;
+  console.log('Password:', pwd);
+
   try {
     const {data, error} = await superbase
     .from('admin')
     .select('*')
     .eq('password', pwd)
-    .single()
-
+    
     if (error || !data) {
+        console.error('An error occurred:', error);
         res.status(404).json({messsage: 'User not found'});
     } else {
-        res.status(200).json({data});
+        console.log('Admin data', data);
+        res.status(200).json({ isValid: true });
     }
 
   } catch (error) {

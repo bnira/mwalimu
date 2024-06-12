@@ -1,5 +1,5 @@
 //path: /api/checkEmployee
-import { superbase } from "@/lib/supabaseClient";
+import { superbase } from "../../lib/supabaseClient";
 
 /**
  * Handler function to check if an employee exists in the voters table.

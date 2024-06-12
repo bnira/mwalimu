@@ -2,7 +2,8 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import toast, { Toaster } from 'react-hot-toast'
-import '@/app/globals.css'
+import Link from 'next/link'
+import '../app/globals.css'
 
 const Vote = () => {
   const [presidentCandidates, setPresidentCandidates] = useState([])
@@ -11,7 +12,7 @@ const Vote = () => {
   const [selectedDeputy, setSelectedDeputy] = useState(null)
   const router = useRouter()
   const { employeeId } = router.query
-
+  
   useEffect(() => {
     const fetchCandidates = async () => {
       const resPresident = await fetch('/api/getCandidates?position=president')
@@ -49,10 +50,19 @@ const Vote = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div>
+      <nav className="bg-gray-800 p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-white font-bold">Vote</div>
+        <div>
+          <Link href="/admin">
+            <div className="text-white hover:underline">Go to admin</div>
+          </Link>
+        </div>
+      </div>
+    </nav>
       <Toaster />
-      <h1 className="text-4xl mb-8">Vote for Candidates</h1>
-
+      <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <div className="mb-8">
         <h2 className="text-2xl mb-4">President Candidates</h2>
         {presidentCandidates.map((candidate) => (
@@ -96,6 +106,7 @@ const Vote = () => {
       >
         Submit
       </button>
+      </div>
     </div>
   )
 }

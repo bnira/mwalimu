@@ -8,17 +8,21 @@ import { superbase } from "../../lib/supabaseClient";
  * @returns {Promise<void>} - A promise that resolves when the candidates are fetched.
  */
 export default async function handler(req, res) {
-    const {position} = req.query;
 
-    const {data,error} = await superbase
-    .from('candidates')
-    .select('*')
-    .eq('position', position);
+    const { data: candidatesData, error: candidatesError } = await superbase
+      .from('candidates')
+      .select('*');
+    
+    const { data: votersData, error: votersError } = await superbase
+      .from('voters')
+      .select('*');
+    
+    const data = { candidates: candidatesData, voters: votersData };
 
+    const error = candidatesError || votersError;
     if(error) {
         res.status(500).json({message: 'Error fetching candidates'});
     } else {
-        console.log(data);
         res.status(200).json(data);
     }
 }

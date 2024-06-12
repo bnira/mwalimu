@@ -22,7 +22,7 @@ const Invitation: React.FC = () => {
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-white font-bold">Admin DashBoard</div>
           <div>
-            <Link href="/admin">
+            <Link href="/">
               <div className="text-white">Go to Home</div>
             </Link>
           </div>

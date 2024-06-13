@@ -48,26 +48,28 @@ const AdminDash = () => {
       <div className="mt-1">
         <AddUser />
       </div>
-      <div className="overflow-x-auto mt-4">
+      <div className="mt-4">
         <h1 className="text-2xl font-bold mb-1 text-black">Candidates</h1>
-        <table className="table-auto border bg-green-200">
-          <thead>
-            <tr>
-              <th className="px-4 py-2">Candidate name</th>
-              <th className="px-4 py-2">Candidate position</th>
-              <th className="px-4 py-2">Candidate votes</th>
-            </tr>
-          </thead>
-          <tbody>
-            {candidates.map((candidate, index) => (
-              <tr key={index}>
-                <td className="border px-4 py-2">{candidate.name}</td>
-                <td className="border px-4 py-2">{candidate.position}</td>
-                <td className="border px-4 py-2">{candidate.votes}</td>
+        <div className="overflow-x-auto">
+          <table className="table-auto border bg-green-200">
+            <thead>
+              <tr>
+                <th className="px-4 py-2">Candidate name</th>
+                <th className="px-4 py-2">Candidate position</th>
+                <th className="px-4 py-2">Candidate votes</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {candidates.map((candidate, index) => (
+                <tr key={index}>
+                  <td className="border px-4 py-2">{candidate.name}</td>
+                  <td className="border px-4 py-2">{candidate.position}</td>
+                  <td className="border px-4 py-2">{candidate.votes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div className="mt-8">
         <h2 className="text-2xl font-bold mt-2 text-black">Employees</h2>

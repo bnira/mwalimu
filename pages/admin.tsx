@@ -18,7 +18,7 @@ const Invitation: React.FC = () => {
 
   return isAuthenticated ? (
     <div>
-      <nav className="bg-gray-800 p-4">
+        <nav className="bg-gray-800 p-4 w-full">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-white font-bold">Admin DashBoard</div>
           <div>
@@ -28,13 +28,14 @@ const Invitation: React.FC = () => {
           </div>
         </div>
       </nav>
-      <div className='flex flex-col items-center justify-center min-h-screen py-2'>
+      <div className='items-center justify-center'>
         <AdminDash />
-      </div>
+        </div>
     </div>
-  ) : (
-    <AdminLoginComponent onLoginSuccess={handleLoginSuccess} />
-  );
+ ) : (
+  <AdminLoginComponent onLoginSuccess={handleLoginSuccess} />
+ );
+
 };
 
 export default Invitation;

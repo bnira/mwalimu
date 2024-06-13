@@ -30,7 +30,7 @@ const AddUser: React.FC = () => {
 };
 
     return (
-        <div>
+        <div className="overflow-x-hidden justify-center ">
             <ToastContainer />
             <h1 className="text-2xl font-bold mb-4">Add User</h1>
             <div className="flex flex-col">
@@ -56,7 +56,7 @@ const AddUser: React.FC = () => {
                     <button
                         type="submit"
                         name="addUser"
-                        className="p-2 bg-green-500 text-white"
+                        className="p-2 bg-green-500 text-white ml-1 rounded-md mr-1"
                     >
                         Add User
                     </button>
